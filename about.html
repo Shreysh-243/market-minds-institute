@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Market Minds Institute</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap');
+:root{--primary:#0F766E;--primary-dark:#0a5c56;--secondary:#06B6D4;--accent:#F59E0B;--highlight:#FACC15;--bg:#F8FAFC;--white:#FFFFFF;--text:#111827;--text-muted:#6B7280;--border:#E5E7EB;--shadow:0 4px 24px rgba(15,118,110,0.10);--shadow-hover:0 8px 40px rgba(15,118,110,0.18);--radius:14px;--radius-sm:8px;--transition:0.3s ease;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+.container{max-width:1160px;margin:0 auto;padding:0 24px;}
+.section{padding:80px 0;}
+.section-alt{background:var(--white);}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--primary);margin-bottom:12px;line-height:1.2;}
+.section-title::after{content:'';display:block;width:60px;height:4px;background:linear-gradient(90deg,var(--accent),var(--highlight));border-radius:2px;margin-top:10px;}
+.section-header{text-align:center;margin-bottom:48px;}
+.section-header .section-title::after{margin:10px auto 0;}
+.section-subtitle{color:var(--text-muted);font-size:1rem;max-width:600px;}
+.section-header .section-subtitle{margin:0 auto;}
+.tag{display:inline-block;background:rgba(6,182,212,0.12);color:var(--secondary);font-size:0.78rem;font-weight:600;padding:4px 14px;border-radius:50px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:12px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:50px;font-family:'Poppins',sans-serif;font-size:0.95rem;font-weight:600;cursor:pointer;border:none;transition:transform var(--transition),box-shadow var(--transition),background var(--transition);text-decoration:none;white-space:nowrap;}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--primary);color:var(--white);box-shadow:0 4px 16px rgba(15,118,110,0.25);}
+.btn-primary:hover{background:var(--primary-dark);}
+.btn-accent{background:linear-gradient(135deg,var(--accent),var(--highlight));color:var(--text);box-shadow:0 4px 16px rgba(245,158,11,0.3);}
+.btn-secondary{background:var(--secondary);color:var(--white);box-shadow:0 4px 16px rgba(6,182,212,0.25);}
+.btn-secondary:hover{background:#0099b5;}
+.btn-outline{background:transparent;color:var(--primary);border:2px solid var(--primary);}
+.btn-outline:hover{background:var(--primary);color:var(--white);}
+.btn-white{background:var(--white);color:var(--primary);box-shadow:0 4px 16px rgba(0,0,0,0.12);}
+
+/* NAVBAR — position:relative so it does NOT stick to top on scroll */
+.navbar{position:relative;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);box-shadow:0 2px 16px rgba(15,118,110,0.07);}
+.navbar-top{display:flex;align-items:center;justify-content:center;padding:8px 24px;border-bottom:2px solid var(--border);max-width:1160px;margin:0 auto;}
+.navbar-academy-name{text-align:center;display:flex;flex-direction:column;align-items:center;}
+.navbar-academy-name img{height:120px;width:auto;object-fit:contain;max-width:380px;}
+.navbar-bottom{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:center;height:46px;position:relative;}
+.nav-links{display:flex;align-items:center;gap:4px;}
+.nav-links a{padding:7px 18px;border-radius:8px;font-weight:500;font-size:0.88rem;color:var(--text);transition:background var(--transition),color var(--transition);}
+.nav-links a:hover,.nav-links a.active{background:rgba(15,118,110,0.08);color:var(--primary);}
+.nav-links .nav-cta{background:var(--primary);color:var(--white);padding:8px 20px;border-radius:50px;font-weight:600;}
+.nav-links .nav-cta:hover{background:var(--primary-dark);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:none;background:none;position:absolute;right:24px;}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--primary);border-radius:2px;transition:all 0.3s ease;}
+.hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+
+/* ABOUT PAGE SPECIFIC */
+.about-preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.about-img-box{background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:20px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:5rem;}
+.about-points{margin:24px 0 32px;display:flex;flex-direction:column;gap:12px;}
+.about-point{display:flex;align-items:center;gap:12px;font-size:0.95rem;}
+.about-point .icon{width:32px;height:32px;background:rgba(15,118,110,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.philosophy-card{background:var(--white);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;max-width:760px;margin:0 auto;}
+.philosophy-quote{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);color:var(--primary);margin:24px 0 20px;}
+.markets-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.market-card{background:var(--white);border-radius:var(--radius);padding:40px 32px;box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;transition:transform var(--transition),box-shadow var(--transition);}
+.market-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);}
+.market-icon{font-size:3.5rem;margin-bottom:16px;}
+.market-card h3{font-size:1.3rem;font-weight:700;color:var(--primary);margin-bottom:12px;}
+.market-card p{font-size:0.9rem;color:var(--text-muted);line-height:1.7;}
+.objectives-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.obj-card{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border-left:4px solid var(--primary);display:flex;gap:16px;align-items:flex-start;}
+.obj-num{width:40px;height:40px;background:var(--primary);color:white;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.95rem;flex-shrink:0;}
+.obj-card h3{font-size:1rem;font-weight:700;margin-bottom:6px;}
+.obj-card p{font-size:0.87rem;color:var(--text-muted);line-height:1.6;}
+.instructors-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;max-width:800px;margin:0 auto;}
+.instructor-card{background:var(--white);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;transition:transform var(--transition),box-shadow var(--transition);}
+.instructor-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);}
+.instructor-photo{width:110px;height:110px;border-radius:50%;margin:0 auto 20px;background:linear-gradient(135deg,var(--primary),var(--secondary));overflow:hidden;border:3px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+.instructor-card h3{font-size:1.1rem;font-weight:700;margin-bottom:4px;}
+.instructor-role{color:var(--primary);font-size:0.82rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;}
+.instructor-card p{font-size:0.88rem;color:var(--text-muted);line-height:1.7;}
+
+/* CTA BANNER */
+.cta-banner{background:linear-gradient(135deg,var(--primary) 0%,#0891b2 100%);padding:72px 0;text-align:center;}
+.cta-banner h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--white);margin-bottom:16px;}
+.cta-banner p{color:rgba(255,255,255,0.82);font-size:1.05rem;margin-bottom:36px;max-width:560px;margin-left:auto;margin-right:auto;}
+.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+/* PAGE HERO */
+.page-hero{background:linear-gradient(135deg,var(--primary) 0%,#0891b2 100%);padding:72px 0 64px;text-align:center;}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--white);margin-bottom:12px;}
+.page-hero p{color:rgba(255,255,255,0.82);font-size:1.05rem;max-width:580px;margin:0 auto;}
+.breadcrumb{display:flex;align-items:center;justify-content:center;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.65);margin-bottom:20px;}
+.breadcrumb a{color:var(--highlight);}
+
+/* FOOTER */
+footer{background:#0a1628;color:rgba(255,255,255,0.8);padding:60px 0 0;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;margin-bottom:48px;}
+.footer-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.logo-name{font-weight:800;color:var(--white);font-size:1rem;display:block;}
+.logo-tagline{font-size:0.68rem;font-weight:500;color:var(--secondary);display:block;}
+.footer-brand p{font-size:0.88rem;line-height:1.8;color:rgba(255,255,255,0.6);margin-bottom:20px;}
+.footer-socials{display:flex;gap:10px;}
+.social-btn{width:38px;height:38px;background:rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:background var(--transition),transform var(--transition);text-decoration:none;}
+.social-btn:hover{background:var(--primary);transform:translateY(-3px);}
+.footer-col h4{color:var(--white);font-size:0.95rem;font-weight:700;margin-bottom:18px;padding-bottom:10px;position:relative;}
+.footer-col h4::after{content:'';position:absolute;bottom:0;left:0;width:32px;height:2px;background:var(--accent);border-radius:1px;}
+.footer-col ul li{margin-bottom:10px;}
+.footer-col ul li a{font-size:0.88rem;color:rgba(255,255,255,0.6);transition:color var(--transition),padding-left var(--transition);}
+.footer-col ul li a:hover{color:var(--secondary);padding-left:4px;}
+.footer-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;font-size:0.87rem;color:rgba(255,255,255,0.65);}
+.footer-contact-item .ic{font-size:1rem;margin-top:2px;flex-shrink:0;color:var(--secondary);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.footer-bottom p{font-size:0.82rem;color:rgba(255,255,255,0.4);}
+.whatsapp-float{position:fixed;bottom:30px;right:30px;z-index:999;background:#25D366;color:white;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,0.5);font-size:1.6rem;text-decoration:none;animation:bounce-wa 2s ease-in-out infinite;}
+.whatsapp-float:hover{transform:scale(1.1);animation:none;}
+@keyframes bounce-wa{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:960px){
+  .about-preview-grid,.markets-grid,.objectives-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .instructors-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  .section{padding:56px 0;}
+  .navbar-academy-name img{height:80px;}
+  .hamburger{display:flex;}
+  .nav-links{display:none;flex-direction:column;position:absolute;top:46px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:12px 20px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:100;}
+  .nav-links.open{display:flex;}
+  .nav-links a{padding:10px 12px;width:100%;border-radius:8px;}
+  .instructors-grid,.footer-grid,.cta-buttons{grid-template-columns:1fr;}
+  .cta-buttons{flex-direction:column;align-items:center;}
+  .whatsapp-float{bottom:20px;right:20px;width:52px;height:52px;font-size:1.4rem;}
+}
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-top">
+      <div class="navbar-academy-name">
+        <a href="index.html">
+          <img src="images/logo.JPG" alt="Market Minds Institute Logo" />
+        </a>
+        <h1 style="display:block;font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;color:#0F766E;margin-top:6px;line-height:1.2;">Market Minds Institute</h1>
+        <p style="display:block;font-size:0.75rem;font-weight:600;color:#06B6D4;letter-spacing:0.08em;text-transform:uppercase;margin-top:3px;">Where Markets Makes Sense</p>
+      </div>
+    </div>
+    <div class="navbar-bottom">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>About Us</span></div>
+      <h1>About Market Minds Institute</h1>
+      <p>Building disciplined, knowledgeable, and independent traders through structured education.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-preview-grid">
+        <div class="fade-up">
+          <div class="about-img-box"><span style="font-size:5rem">🏛</span></div>
+        </div>
+        <div class="fade-up">
+          <span class="tag">Who We Are</span>
+          <h2 class="section-title">About the Institute</h2>
+          <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.85;margin-bottom:16px;"><strong style="color:var(--text);">Market Minds Institute</strong> is a professional trading education institute focused on building disciplined, knowledgeable, and independent traders.</p>
+          <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.85;margin-bottom:16px;">We stand for <strong style="color:var(--primary);">structured learning, logical market understanding, and risk-aware trading.</strong></p>
+          <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.85;">We believe trading is a <strong style="color:var(--text);">skill-based profession, not a guessing game.</strong> Our training focuses on how markets move, how institutions operate, and how a trader should Think, Plan, and Execute with discipline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="tag">Our Philosophy</span>
+        <h2 class="section-title">Institute Philosophy</h2>
+      </div>
+      <div class="philosophy-card fade-up">
+        <div style="font-size:3.5rem;margin-bottom:8px;">🧠</div>
+        <div style="font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--secondary);margin-bottom:4px;">Trading Psychology</div>
+        <h3 class="philosophy-quote">"Train the mind first, then the trader."</h3>
+        <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.85;margin-bottom:16px;">We believe <strong style="color:var(--text);">profits are a by-product of correct thinking, discipline, and consistency</strong> — not the starting point of trading education.</p>
+        <p style="color:var(--text-muted);font-size:0.93rem;line-height:1.8;">Trading requires emotional control, a structured approach, and constant practice. Our curriculum builds the trader's mindset first, so strategy and execution come from a place of clarity — not fear or greed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="tag">Markets We Cover</span>
+        <h2 class="section-title">Markets Covered</h2>
+      </div>
+      <div class="markets-grid">
+        <div class="market-card fade-up">
+          <div class="market-icon">🇮🇳</div>
+          <h3>Indian Market</h3>
+          <p>Covering NSE and BSE equity and index markets including stock market basics, option chain analysis, technical and fundamental analysis, candlestick patterns, price action, and Smart Money Concepts.</p>
+        </div>
+        <div class="market-card fade-up">
+          <div class="market-icon">🌍</div>
+          <h3>Forex Market</h3>
+          <p>Covering global currency pairs with a strong emphasis on price action, market structure, Smart Money Concepts, and disciplined risk management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="tag">Our Mission</span>
+        <h2 class="section-title">Institute Objectives</h2>
+      </div>
+      <div class="objectives-grid">
+        <div class="obj-card fade-up"><div class="obj-num">01</div><div><h3>Strong Market Understanding</h3><p>Deep knowledge of how markets move and how to read charts with logical reasoning rather than guesswork.</p></div></div>
+        <div class="obj-card fade-up"><div class="obj-num">02</div><div><h3>Risk & Capital Protection</h3><p>Every student learns to protect capital first. A trading plan, stop losses, and position sizing are core to every course.</p></div></div>
+        <div class="obj-card fade-up"><div class="obj-num">03</div><div><h3>Emotional Discipline</h3><p>Trading psychology is taught from day one. We help students manage fear, greed, and impulsive decision making.</p></div></div>
+        <div class="obj-card fade-up"><div class="obj-num">04</div><div><h3>Long-Term Consistency</h3><p>The goal is not a one-time profit but sustainable, consistent trading — habits and systems that last beyond market cycles.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="tag">Our Faculty</span>
+        <h2 class="section-title">Meet the Instructors</h2>
+      </div>
+      <div class="instructors-grid">
+        <div class="instructor-card fade-up">
+          <div class="instructor-photo">👨‍💼</div>
+          <h3>Siddhesh Kokate</h3>
+          <div class="instructor-role">Head Trainer — Indian Markets, Forex & SMC Specialist</div>
+          <p>Expert in Indian equity and index markets. Specialises in price action, market structure, and building systematic trading approaches for students.</p>
+        </div>
+        <div class="instructor-card fade-up">
+          <div class="instructor-photo">👨‍🏫</div>
+          <h3>Tanmay Anil Helkar</h3>
+          <div class="instructor-role">Forex & SMC Specialist</div>
+          <p>Specialist in Forex markets and Smart Money Concepts. Focuses on beginner-friendly delivery with real chart examples and live market walkthroughs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready to Learn the Right Way?</h2>
+      <p>Join Market Minds Institute and start building real trading skills today.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/917400132119" target="_blank" class="btn btn-accent">💬 Contact on WhatsApp</a>
+        <a href="courses.html" class="btn btn-white">📚 Explore Courses</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <div style="width:36px;height:36px;font-size:1.1rem;background:linear-gradient(135deg,#0F766E,#06B6D4);border-radius:8px;display:flex;align-items:center;justify-content:center;">📈</div>
+            <div>
+              <span class="logo-name">Market Minds Institute</span>
+              <span class="logo-tagline">Where Markets Makes Sense</span>
+            </div>
+          </div>
+          <p>A professional trading education institute focused on building disciplined, knowledgeable, and independent traders.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/marketmindsinstitutes" target="_blank" class="social-btn">📸</a>
+            <a href="https://wa.me/917400132119" target="_blank" class="social-btn">💬</a>
+            <a href="mailto:marketmindsinstitutes@gmail.com" class="social-btn">📧</a>
+            <a href="https://t.me/+IvZo-n3CjStmNmJI" target="_blank" class="social-btn">✈️</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Courses</h4>
+          <ul>
+            <li><a href="courses.html">Indian Stock Market</a></li>
+            <li><a href="courses.html">Forex and Crypto</a></li>
+            <li><a href="courses.html">Professional Trader Program</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item"><span class="ic">📞</span><div><a href="tel:+917400132119" style="color:rgba(255,255,255,0.65);">+91 7400132119</a></div></div>
+          <div class="footer-contact-item"><span class="ic">📧</span><div><a href="mailto:marketmindsinstitutes@gmail.com" style="color:rgba(255,255,255,0.65);">marketmindsinstitutes@gmail.com</a></div></div>
+          <div class="footer-contact-item"><span class="ic">📍</span><div>Mbc Park, D Wing-11th Floor, Office No-1106, Kasarwadavali Ghodbunder Road, Thane West 400615</div></div>
+          <div class="footer-contact-item"><span class="ic">📸</span><div><a href="https://www.instagram.com/marketmindsinstitutes" target="_blank" style="color:rgba(255,255,255,0.65);">@marketmindsinstitutes</a></div></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Market Minds Institute. All rights reserved.</p>
+        <p>Education purpose only. Trading involves market risk.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/917400132119" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">💬</a>
+
+  <script>
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+}
+const fadeEls = document.querySelectorAll('.fade-up');
+if (fadeEls.length) {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+  },{threshold:0.1});
+  fadeEls.forEach(el => obs.observe(el));
+}
+  </script>
+</body>
+</html>

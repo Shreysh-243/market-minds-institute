@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Market Minds Institute</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap');
+:root {
+  --primary: #0F766E;
+  --primary-dark: #0a5c56;
+  --secondary: #06B6D4;
+  --accent: #F59E0B;
+  --highlight: #FACC15;
+  --bg: #F8FAFC;
+  --white: #FFFFFF;
+  --text: #111827;
+  --text-muted: #6B7280;
+  --border: #E5E7EB;
+  --shadow: 0 4px 24px rgba(15,118,110,0.10);
+  --shadow-hover: 0 8px 40px rgba(15,118,110,0.18);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --transition: 0.3s ease;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+
+/* CONTAINER */
+.container{max-width:1160px;margin:0 auto;padding:0 24px;}
+.section{padding:80px 0;}
+.section-alt{background:var(--white);}
+
+/* SECTION TITLES */
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--primary);margin-bottom:12px;line-height:1.2;}
+.section-title::after{content:'';display:block;width:60px;height:4px;background:linear-gradient(90deg,var(--accent),var(--highlight));border-radius:2px;margin-top:10px;}
+.section-header{text-align:center;margin-bottom:48px;}
+.section-header .section-title::after{margin:10px auto 0;}
+.section-subtitle{color:var(--text-muted);font-size:1rem;max-width:600px;}
+.section-header .section-subtitle{margin:0 auto;}
+.tag{display:inline-block;background:rgba(6,182,212,0.12);color:var(--secondary);font-size:0.78rem;font-weight:600;padding:4px 14px;border-radius:50px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:12px;}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:50px;font-family:'Poppins',sans-serif;font-size:0.95rem;font-weight:600;cursor:pointer;border:none;transition:transform var(--transition),box-shadow var(--transition),background var(--transition);text-decoration:none;white-space:nowrap;}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--primary);color:var(--white);box-shadow:0 4px 16px rgba(15,118,110,0.25);}
+.btn-primary:hover{background:var(--primary-dark);box-shadow:0 8px 24px rgba(15,118,110,0.35);}
+.btn-accent{background:linear-gradient(135deg,var(--accent),var(--highlight));color:var(--text);box-shadow:0 4px 16px rgba(245,158,11,0.3);}
+.btn-accent:hover{box-shadow:0 8px 28px rgba(245,158,11,0.4);}
+.btn-secondary{background:var(--secondary);color:var(--white);box-shadow:0 4px 16px rgba(6,182,212,0.25);}
+.btn-secondary:hover{background:#0099b5;}
+.btn-outline{background:transparent;color:var(--primary);border:2px solid var(--primary);}
+.btn-outline:hover{background:var(--primary);color:var(--white);}
+.btn-white{background:var(--white);color:var(--primary);box-shadow:0 4px 16px rgba(0,0,0,0.12);}
+.btn-white:hover{background:var(--bg);}
+
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);box-shadow:0 2px 16px rgba(15,118,110,0.07);}
+.navbar-top{display:flex;align-items:center;justify-content:center;padding:4px 24px 4px;border-bottom:2px solid var(--border);max-width:1160px;margin:0 auto;}
+.navbar-logo{display:none;}
+.logo-icon-box{display:none;}
+.navbar-academy-name{text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.navbar-academy-name img{height:70px;width:auto;object-fit:contain;max-width:280px;}
+.navbar-academy-name h1{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--primary);line-height:1.1;}
+.navbar-academy-name p{font-size:0.75rem;font-weight:500;color:var(--secondary);letter-spacing:0.06em;text-transform:uppercase;margin-top:2px;}
+.navbar-bottom{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:center;height:46px;position:relative;}
+.nav-links{display:flex;align-items:center;gap:4px;}
+.nav-links a{padding:7px 18px;border-radius:8px;font-weight:500;font-size:0.88rem;color:var(--text);transition:background var(--transition),color var(--transition);}
+.nav-links a:hover,.nav-links a.active{background:rgba(15,118,110,0.08);color:var(--primary);}
+.nav-links .nav-cta{background:var(--primary);color:var(--white);padding:8px 20px;border-radius:50px;font-weight:600;}
+.nav-links .nav-cta:hover{background:var(--primary-dark);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:none;background:none;position:absolute;right:24px;}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--primary);border-radius:2px;transition:all 0.3s ease;}
+.hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0a5c56 0%,var(--primary) 40%,#0891b2 100%);position:relative;overflow:hidden;padding:80px 0 70px;min-height:85vh;display:flex;align-items:center;}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(250,204,21,0.12) 0%,transparent 70%);border-radius:50%;animation:pulse-slow 6s ease-in-out infinite;}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-60px;width:400px;height:400px;background:radial-gradient(circle,rgba(6,182,212,0.15) 0%,transparent 70%);border-radius:50%;animation:pulse-slow 8s ease-in-out infinite reverse;}
+@keyframes pulse-slow{0%,100%{transform:scale(1);opacity:0.8;}50%{transform:scale(1.15);opacity:1;}}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:2;}
+.hero-content .tag{background:rgba(250,204,21,0.2);color:var(--highlight);}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.6rem);color:var(--white);line-height:1.15;margin-bottom:10px;}
+.hero-title span{color:var(--highlight);}
+.hero-tagline{font-size:1.1rem;font-weight:600;color:rgba(250,204,21,0.9);margin-bottom:18px;letter-spacing:0.03em;}
+.hero-text{color:rgba(255,255,255,0.85);font-size:1rem;margin-bottom:36px;max-width:480px;line-height:1.8;}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:14px;}
+.hero-visual{display:flex;justify-content:center;align-items:center;}
+.hero-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);backdrop-filter:blur(10px);border-radius:24px;padding:36px 32px;width:100%;max-width:420px;animation:float 4s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+.chart-visual{display:flex;align-items:flex-end;gap:10px;height:130px;margin-bottom:24px;}
+.bar{flex:1;border-radius:6px 6px 0 0;animation:grow-bar 1.4s ease forwards;transform-origin:bottom;opacity:0;}
+@keyframes grow-bar{from{transform:scaleY(0);opacity:0;}to{transform:scaleY(1);opacity:1;}}
+.bar:nth-child(1){background:rgba(6,182,212,0.7);height:50%;animation-delay:0.2s;}
+.bar:nth-child(2){background:rgba(250,204,21,0.8);height:75%;animation-delay:0.4s;}
+.bar:nth-child(3){background:rgba(245,158,11,0.85);height:55%;animation-delay:0.6s;}
+.bar:nth-child(4){background:rgba(255,255,255,0.7);height:90%;animation-delay:0.8s;}
+.bar:nth-child(5){background:rgba(6,182,212,0.7);height:65%;animation-delay:1.0s;}
+.bar:nth-child(6){background:rgba(250,204,21,0.85);height:100%;animation-delay:1.2s;}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.hero-stat{background:rgba(255,255,255,0.1);border-radius:12px;padding:14px 16px;text-align:center;border:1px solid rgba(255,255,255,0.12);}
+.hero-stat .num{font-size:1.6rem;font-weight:800;color:var(--highlight);line-height:1;}
+.hero-stat .lbl{font-size:0.75rem;color:rgba(255,255,255,0.75);margin-top:4px;}
+
+/* ABOUT PREVIEW */
+.about-preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.about-preview-img{position:relative;}
+.about-img-box{background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:20px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:5rem;}
+.about-img-box img{width:100%;height:100%;object-fit:cover;}
+.about-badge{position:absolute;bottom:-20px;right:-20px;background:var(--white);border-radius:14px;padding:16px 20px;box-shadow:var(--shadow);text-align:center;}
+.about-badge .num{font-size:1.8rem;font-weight:800;color:var(--primary);line-height:1;}
+.about-badge .lbl{font-size:0.75rem;color:var(--text-muted);margin-top:2px;}
+.about-points{margin:24px 0 32px;display:flex;flex-direction:column;gap:12px;}
+.about-point{display:flex;align-items:center;gap:12px;font-size:0.95rem;}
+.about-point .icon{width:32px;height:32px;background:rgba(15,118,110,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+
+/* COURSE CARDS */
+.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.course-card{background:var(--white);border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow);transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden;border:1px solid var(--border);display:flex;flex-direction:column;}
+.course-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:var(--radius) var(--radius) 0 0;}
+.course-card.card-1::before{background:linear-gradient(90deg,var(--primary),var(--secondary));}
+.course-card.card-2::before{background:linear-gradient(90deg,var(--secondary),var(--accent));}
+.course-card.card-3::before{background:linear-gradient(90deg,var(--accent),var(--highlight));}
+.course-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-hover);}
+.course-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:20px;}
+.card-1 .course-icon{background:rgba(15,118,110,0.1);}
+.card-2 .course-icon{background:rgba(6,182,212,0.1);}
+.card-3 .course-icon{background:rgba(245,158,11,0.1);}
+.course-level{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--secondary);margin-bottom:8px;}
+.course-card h3{font-size:1.15rem;font-weight:700;margin-bottom:12px;color:var(--text);}
+.course-card p{font-size:0.9rem;color:var(--text-muted);line-height:1.7;flex:1;margin-bottom:24px;}
+.course-card .btn{align-self:flex-start;}
+
+/* INSTRUCTOR CARDS */
+.instructors-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;max-width:800px;margin:0 auto;}
+.instructor-card{background:var(--white);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;transition:transform var(--transition),box-shadow var(--transition);}
+.instructor-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);}
+.instructor-photo{width:110px;height:110px;border-radius:50%;margin:0 auto 20px;background:linear-gradient(135deg,var(--primary),var(--secondary));overflow:hidden;border:3px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+.instructor-photo img{width:100%;height:100%;object-fit:cover;}
+.instructor-card h3{font-size:1.1rem;font-weight:700;margin-bottom:4px;}
+.instructor-role{color:var(--primary);font-size:0.82rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;}
+.instructor-card p{font-size:0.88rem;color:var(--text-muted);line-height:1.7;}
+
+/* WHY CHOOSE */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+.why-card{background:var(--white);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);border:1px solid var(--border);display:flex;gap:20px;align-items:flex-start;transition:transform var(--transition),box-shadow var(--transition);}
+.why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);}
+.why-icon{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;color:white;}
+.why-card h3{font-size:1rem;font-weight:700;margin-bottom:8px;}
+.why-card p{font-size:0.88rem;color:var(--text-muted);line-height:1.7;}
+
+/* CTA BANNER */
+.cta-banner{background:linear-gradient(135deg,var(--primary) 0%,#0891b2 100%);padding:72px 0;text-align:center;position:relative;overflow:hidden;}
+.cta-banner h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--white);margin-bottom:16px;}
+.cta-banner p{color:rgba(255,255,255,0.82);font-size:1.05rem;margin-bottom:36px;max-width:560px;margin-left:auto;margin-right:auto;}
+.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+/* FOOTER */
+footer{background:#0a1628;color:rgba(255,255,255,0.8);padding:60px 0 0;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;margin-bottom:48px;}
+.footer-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.logo-name{font-weight:800;color:var(--white);font-size:1rem;display:block;}
+.logo-tagline{font-size:0.68rem;font-weight:500;color:var(--secondary);display:block;}
+.footer-brand p{font-size:0.88rem;line-height:1.8;color:rgba(255,255,255,0.6);margin-bottom:20px;}
+.footer-socials{display:flex;gap:10px;}
+.social-btn{width:38px;height:38px;background:rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:background var(--transition),transform var(--transition);text-decoration:none;}
+.social-btn:hover{background:var(--primary);transform:translateY(-3px);}
+.footer-col h4{color:var(--white);font-size:0.95rem;font-weight:700;margin-bottom:18px;padding-bottom:10px;position:relative;}
+.footer-col h4::after{content:'';position:absolute;bottom:0;left:0;width:32px;height:2px;background:var(--accent);border-radius:1px;}
+.footer-col ul li{margin-bottom:10px;}
+.footer-col ul li a{font-size:0.88rem;color:rgba(255,255,255,0.6);transition:color var(--transition),padding-left var(--transition);}
+.footer-col ul li a:hover{color:var(--secondary);padding-left:4px;}
+.footer-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;font-size:0.87rem;color:rgba(255,255,255,0.65);}
+.footer-contact-item .ic{font-size:1rem;margin-top:2px;flex-shrink:0;color:var(--secondary);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.footer-bottom p{font-size:0.82rem;color:rgba(255,255,255,0.4);}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{position:fixed;bottom:30px;right:30px;z-index:999;background:#25D366;color:white;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,0.5);font-size:1.6rem;text-decoration:none;animation:bounce-wa 2s ease-in-out infinite;}
+.whatsapp-float:hover{transform:scale(1.1);animation:none;}
+@keyframes bounce-wa{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+
+/* PAGE HERO (inner pages) */
+.page-hero{background:linear-gradient(135deg,var(--primary) 0%,#0891b2 100%);padding:72px 0 64px;text-align:center;}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--white);margin-bottom:12px;}
+.page-hero p{color:rgba(255,255,255,0.82);font-size:1.05rem;max-width:580px;margin:0 auto;}
+.breadcrumb{display:flex;align-items:center;justify-content:center;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.65);margin-bottom:20px;}
+.breadcrumb a{color:var(--highlight);}
+
+/* ABOUT PAGE */
+.philosophy-card{background:var(--white);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;max-width:760px;margin:0 auto;}
+.philosophy-quote{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);color:var(--primary);margin:24px 0 20px;}
+.markets-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.market-card{background:var(--white);border-radius:var(--radius);padding:40px 32px;box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;transition:transform var(--transition),box-shadow var(--transition);}
+.market-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);}
+.market-icon{font-size:3.5rem;margin-bottom:16px;}
+.market-card h3{font-size:1.3rem;font-weight:700;color:var(--primary);margin-bottom:12px;}
+.market-card p{font-size:0.9rem;color:var(--text-muted);line-height:1.7;}
+.objectives-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.obj-card{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border-left:4px solid var(--primary);display:flex;gap:16px;align-items:flex-start;}
+.obj-num{width:40px;height:40px;background:var(--primary);color:white;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.95rem;flex-shrink:0;}
+.obj-card h3{font-size:1rem;font-weight:700;margin-bottom:6px;}
+.obj-card p{font-size:0.87rem;color:var(--text-muted);line-height:1.6;}
+
+/* COURSES PAGE */
+.course-full-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);overflow:hidden;margin-bottom:36px;}
+.course-full-card:hover{box-shadow:var(--shadow-hover);}
+.course-full-header{padding:36px 40px;display:flex;align-items:flex-start;gap:24px;}
+.course-full-icon{width:72px;height:72px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;}
+.cfi-1{background:rgba(15,118,110,0.1);}
+.cfi-2{background:rgba(6,182,212,0.1);}
+.cfi-3{background:rgba(245,158,11,0.1);}
+.course-full-meta h2{font-size:1.4rem;font-weight:700;margin-bottom:10px;color:var(--text);}
+.course-full-meta p{font-size:0.93rem;color:var(--text-muted);line-height:1.75;}
+.course-full-body{border-top:1px solid var(--border);padding:32px 40px;display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.course-topics h4{font-weight:700;margin-bottom:14px;font-size:0.92rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--primary);}
+.course-topics ul li{padding:6px 0;font-size:0.88rem;color:var(--text-muted);display:flex;align-items:center;gap:8px;border-bottom:1px dashed var(--border);}
+.course-topics ul li::before{content:'✓';color:var(--primary);font-weight:700;flex-shrink:0;}
+.course-info-box{background:var(--bg);border-radius:var(--radius-sm);padding:24px;}
+.course-info-box h4{font-weight:700;margin-bottom:14px;font-size:0.92rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--primary);}
+.info-row{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:0.88rem;border-bottom:1px solid var(--border);color:var(--text);}
+.info-row:last-child{border-bottom:none;}
+.info-row .ic{color:var(--primary);font-size:1rem;flex-shrink:0;}
+.batches-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.batch-card{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;transition:transform var(--transition);}
+.batch-card:hover{transform:translateY(-4px);}
+.batch-num{display:inline-block;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;font-size:0.78rem;font-weight:700;padding:4px 14px;border-radius:50px;margin-bottom:14px;text-transform:uppercase;}
+.batch-card h3{font-size:0.98rem;font-weight:700;margin-bottom:8px;}
+.batch-card p{font-size:0.84rem;color:var(--text-muted);}
+.concepts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.concept-card{background:var(--white);border-radius:var(--radius-sm);padding:24px 20px;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform var(--transition);}
+.concept-card:hover{transform:translateY(-4px);}
+.concept-card h4{font-size:0.92rem;font-weight:700;color:var(--primary);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid rgba(15,118,110,0.12);}
+.concept-card ul li{font-size:0.82rem;color:var(--text-muted);padding:3px 0 3px 12px;position:relative;}
+.concept-card ul li::before{content:'›';position:absolute;left:0;color:var(--primary);font-weight:700;}
+
+/* REVIEWS PAGE */
+.reviews-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:60px;}
+.stat-card{background:var(--white);border-radius:var(--radius);padding:28px 20px;box-shadow:var(--shadow);border:1px solid var(--border);text-align:center;}
+.stat-card .big-num{font-size:2.4rem;font-weight:800;color:var(--primary);line-height:1;margin-bottom:6px;}
+.stat-card .lbl{font-size:0.82rem;color:var(--text-muted);}
+.videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:60px;}
+.video-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform var(--transition),box-shadow var(--transition);}
+.video-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);}
+.video-thumb{position:relative;background:linear-gradient(135deg,var(--primary),var(--secondary));aspect-ratio:16/9;overflow:hidden;}
+.video-thumb iframe{width:100%;height:100%;border:none;}
+.video-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;font-size:0.85rem;gap:10px;}
+.play-icon{width:52px;height:52px;background:rgba(255,255,255,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;}
+.video-info{padding:20px;}
+.video-info h4{font-size:0.93rem;font-weight:700;margin-bottom:6px;}
+.video-info p{font-size:0.82rem;color:var(--text-muted);}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.testimonial-card{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform var(--transition);}
+.testimonial-card:hover{transform:translateY(-4px);}
+.stars{color:var(--accent);font-size:1rem;margin-bottom:14px;letter-spacing:2px;}
+.testimonial-card p{font-size:0.9rem;color:var(--text);line-height:1.75;margin-bottom:18px;font-style:italic;}
+.reviewer{display:flex;align-items:center;gap:12px;}
+.reviewer-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:0.9rem;flex-shrink:0;}
+.reviewer-name{font-weight:600;font-size:0.9rem;}
+.reviewer-course{font-size:0.78rem;color:var(--text-muted);}
+
+/* CONTACT PAGE */
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start;}
+.contact-form-box{background:var(--white);border-radius:var(--radius);padding:44px 40px;box-shadow:var(--shadow);border:1px solid var(--border);}
+.contact-form-box h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--primary);margin-bottom:6px;}
+.contact-form-box .sub{font-size:0.9rem;color:var(--text-muted);margin-bottom:30px;}
+.form-group{margin-bottom:22px;}
+.form-group label{display:block;font-size:0.88rem;font-weight:600;color:var(--text);margin-bottom:8px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:13px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:'Poppins',sans-serif;font-size:0.92rem;color:var(--text);background:var(--bg);transition:border-color var(--transition),box-shadow var(--transition);outline:none;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(15,118,110,0.1);}
+.form-group textarea{resize:vertical;min-height:130px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-success{display:none;background:rgba(15,118,110,0.1);border:1px solid var(--primary);border-radius:var(--radius-sm);padding:14px 18px;color:var(--primary);font-weight:600;font-size:0.9rem;margin-top:16px;text-align:center;}
+.contact-info-col{display:flex;flex-direction:column;gap:22px;}
+.contact-info-card{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid var(--border);display:flex;gap:16px;align-items:flex-start;transition:transform var(--transition);}
+.contact-info-card:hover{transform:translateX(4px);}
+.ci-icon{width:46px;height:46px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:white;flex-shrink:0;}
+.ci-label{font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:4px;}
+.ci-value{font-size:0.92rem;font-weight:600;color:var(--text);}
+.ci-value a{color:var(--primary);}
+.ci-value a:hover{color:var(--secondary);}
+.map-placeholder{background:linear-gradient(135deg,rgba(15,118,110,0.1),rgba(6,182,212,0.1));border:2px dashed var(--border);border-radius:var(--radius);height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;color:var(--text-muted);}
+
+/* SCROLL ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+/* TABLET */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:40px;}
+  .hero-visual{order:-1;}
+  .hero-card{max-width:420px;margin:0 auto;}
+  .about-preview-grid,.contact-grid{grid-template-columns:1fr;}
+  .courses-grid,.footer-grid{grid-template-columns:1fr 1fr;}
+  .course-full-body{grid-template-columns:1fr;}
+  .batches-grid{grid-template-columns:1fr;gap:16px;}
+  .concepts-grid,.videos-grid{grid-template-columns:1fr 1fr;}
+  .reviews-stats{grid-template-columns:repeat(2,1fr);}
+  .testimonials-grid,.objectives-grid,.markets-grid{grid-template-columns:1fr;}
+}
+
+/* MOBILE */
+@media(max-width:640px){
+  .section{padding:56px 0;}
+  .navbar-top{padding:10px 70px 8px 24px;}
+  .navbar-academy-name h1{font-size:1rem;}
+  .navbar-academy-name p{display:none;}
+  .hamburger{display:flex;}
+  .nav-links{display:none;flex-direction:column;position:absolute;top:46px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:12px 20px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,0.08);z-index:100;}
+  .nav-links.open{display:flex;}
+  .nav-links a{padding:10px 12px;width:100%;border-radius:8px;}
+  .courses-grid,.why-grid,.instructors-grid,.footer-grid,.concepts-grid,.testimonials-grid,.batches-grid,.reviews-stats{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .hero-buttons,.cta-buttons{flex-direction:column;align-items:flex-start;}
+  .cta-buttons{align-items:center;}
+  .course-full-header{flex-direction:column;gap:16px;padding:24px;}
+  .course-full-body{padding:24px;}
+  .about-badge{bottom:-10px;right:-10px;}
+  .whatsapp-float{bottom:20px;right:20px;width:52px;height:52px;font-size:1.4rem;}
+}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-top">
+      <div class="navbar-academy-name">
+        <a href="index.html">
+          <img src="images/logo.JPG" alt="Market Minds Institute Logo" />
+        </a>
+        <h1 style="display:none;">Market Minds Institute</h1>
+        <p style="display:none;">Where Markets Makes Sense</p>
+      </div>
+    </div>
+    <div class="navbar-bottom">
+      <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="courses.html">Courses</a></li><li><a href="reviews.html">Reviews</a></li><li><a href="contact.html" class="nav-cta active">Contact Us</a></li></ul>
+      <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Contact Us</span></div>
+      <h1>Get In Touch</h1>
+      <p>We're here to answer your questions about courses, batches, and admissions.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-form-box fade-up">
+          <h2>Send Us a Message</h2>
+          <p class="sub">Fill in the form below and we'll get back to you as soon as possible.</p>
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" name="name" placeholder="Your full name" required /></div>
+              <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" /></div>
+            </div>
+            <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" placeholder="your@email.com" required /></div>
+            <div class="form-group"><label for="course">Course Interest</label>
+              <select id="course" name="course">
+                <option value="">Select a course...</option>
+                <option value="indian">Indian Stock Market Trading</option>
+                <option value="forex">Forex Trading and Crypto</option>
+                <option value="professional">Professional Trader Program</option>
+                <option value="unsure">Not Sure Yet</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="message">Your Message *</label><textarea id="message" name="message" placeholder="Ask about course fees, batch timings, or anything else..." required></textarea></div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:15px;">📨 Send Message</button>
+            <div id="formSuccess" class="form-success">✅ Thank you! Your message has been sent. We'll get back to you shortly.</div>
+          </form>
+        </div>
+        <div class="contact-info-col">
+          <div class="contact-info-card fade-up">
+            <div class="ci-icon">💬</div>
+            <div>
+              <div class="ci-label">WhatsApp (Fastest Response)</div>
+              <div class="ci-value"><a href="https://wa.me/917400132119" target="_blank">+91 7400132119</a></div>
+              <div style="margin-top:12px;"><a href="https://wa.me/917400132119" target="_blank" class="btn btn-secondary" style="padding:10px 20px;font-size:0.85rem;">💬 Open WhatsApp Chat</a></div>
+            </div>
+          </div>
+          <div class="contact-info-card fade-up">
+            <div class="ci-icon">📞</div>
+            <div><div class="ci-label">Phone</div><div class="ci-value"><a href="tel:+917400132119">+91 7400132119</a></div></div>
+          </div>
+          <div class="contact-info-card fade-up">
+            <div class="ci-icon">📧</div>
+            <div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:marketmindsinstitutes@gmail.com">marketmindsinstitutes@gmail.com</a></div></div>
+          </div>
+          <div class="contact-info-card fade-up">
+            <div class="ci-icon">📸</div>
+            <div>
+              <div class="ci-label">Instagram</div>
+              <div class="ci-value"><a href="https://www.instagram.com/marketmindsinstitutes" target="_blank">@marketmindsinstitutes</a></div>
+              <div style="margin-top:10px;"><a href="https://www.instagram.com/marketmindsinstitutes" target="_blank" class="btn btn-outline" style="padding:8px 18px;font-size:0.82rem;">Follow on Instagram</a></div>
+            </div>
+          </div>
+          <!-- Telegram -->
+          <div class="contact-info-card fade-up">
+            <div class="ci-icon" style="background:linear-gradient(135deg,#229ED9,#1a7fb5);">✈️</div>
+            <div>
+              <div class="ci-label">Telegram Channel</div>
+              <div class="ci-value"><a href="https://t.me/+IvZo-n3CjStmNmJI" target="_blank">Market Minds Institute</a></div>
+              <div style="margin-top:10px;">
+                <a href="https://t.me/+IvZo-n3CjStmNmJI" target="_blank" class="btn" style="background:linear-gradient(135deg,#229ED9,#1a7fb5);color:white;padding:8px 18px;font-size:0.82rem;">Join Telegram Channel</a>
+              </div>
+            </div>
+           </div>
+          <div class="contact-info-card fade-up">
+            <div class="ci-icon">🕐</div>
+            <div style="width:100%;">
+              <div class="ci-label">Office Hours</div>
+              <div style="display:flex;justify-content:space-between;padding:6px 0;font-size:0.88rem;border-bottom:1px solid var(--border);">
+                <span style="color:var(--text-muted);font-weight:500;">Monday – Saturday</span>
+                <span style="color:var(--primary);font-weight:600;">10:00 AM – 9:00 PM</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:6px 0;font-size:0.88rem;">
+                <span style="color:var(--text-muted);font-weight:500;">Sunday</span>
+                <span style="color:var(--primary);font-weight:600;">10:00 AM – 9:00 PM</span>
+              </div>
+              <span style="display:inline-block;background:rgba(15,118,110,0.1);color:var(--primary);font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:50px;margin-top:10px;">✅ Open Every Day</span>
+            </div>
+            </div>
+          <div class="contact-info-card fade-up">
+            <div class="ci-icon">📍</div>
+            <div>
+              <div class="ci-label">Office Address</div>
+              <div class="ci-value" style="font-weight:400;font-size:0.88rem;color:var(--text-muted);line-height:1.7;">Mbc Park, D Wing – 11th Floor,<br/>Office No-1106, Near G Corp,<br/>Kasarwadavali Ghodbunder Road,<br/><strong style="color:var(--text);">Thane West 400615</strong></div>
+            </div>
+          </div>
+          <div class="map-placeholder fade-up">
+            <div style="font-size:2.5rem;">🗺</div>
+            <p style="font-size:0.85rem;">Google Map Placeholder</p>
+            <a href="https://maps.google.com/?q=Mbc+Park+Kasarwadavali+Ghodbunder+Road+Thane+West" target="_blank" class="btn btn-outline" style="padding:8px 16px;font-size:0.8rem;margin-top:8px;">📍 Open in Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Still Have Questions?</h2>
+      <p>The fastest way to get answers is on WhatsApp. We'll respond quickly and help you find the right course.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/917400132119" target="_blank" class="btn btn-accent">💬 Chat on WhatsApp</a>
+        <a href="assets/brochure.pdf" download class="btn btn-white">⬇ Download Brochure</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <div class="logo-icon-box" style="width:36px;height:36px;font-size:1.1rem;">📈</div>
+            <div>
+              <span class="logo-name">Market Minds Institute</span>
+              <span class="logo-tagline">Where Markets Makes Sense</span>
+            </div>
+          </div>
+          <p>A professional trading education institute focused on building disciplined, knowledgeable, and independent traders.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/marketmindsinstitutes" target="_blank" class="social-btn">📸</a>
+            <a href="https://wa.me/917400132119" target="_blank" class="social-btn">💬</a>
+            <a href="mailto:marketmindsinstitutes@gmail.com" class="social-btn">📧</a>
+            <a href="https://t.me/+IvZo-n3CjStmNmJI" target="_blank" class="social-btn">✈️</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Courses</h4>
+          <ul>
+            <li><a href="courses.html">Indian Stock Market</a></li>
+            <li><a href="courses.html">Forex Trading</a></li>
+            <li><a href="courses.html">Professional Trader Program</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item"><span class="ic">📞</span><div><a href="tel:+917400132119" style="color:rgba(255,255,255,0.65);">+91 7400132119</a></div></div>
+          <div class="footer-contact-item"><span class="ic">📧</span><div><a href="mailto:marketmindsinstitutes@gmail.com" style="color:rgba(255,255,255,0.65);">marketmindsinstitutes@gmail.com</a></div></div>
+          <div class="footer-contact-item"><span class="ic">📍</span><div>Mbc Park, D Wing-11th Floor, Office No-1106, Kasarwadavali Ghodbunder Road, Thane West 400615</div></div>
+          <div class="footer-contact-item"><span class="ic">📸</span><div><a href="https://www.instagram.com/marketmindsinstitutes" target="_blank" style="color:rgba(255,255,255,0.65);">@marketmindsinstitutes</a></div></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Market Minds Institute. All rights reserved.</p>
+        <p>Education purpose only. Trading involves market risk.</p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/917400132119" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">💬</a>
+  <script>
+// Mobile nav toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+}
+
+// Scroll fade-up animation
+const fadeEls = document.querySelectorAll('.fade-up');
+if (fadeEls.length) {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  fadeEls.forEach(el => obs.observe(el));
+}
+
+// Contact form
+const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name')?.value.trim();
+    const email = document.getElementById('email')?.value.trim();
+    const message = document.getElementById('message')?.value.trim();
+    if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
+    const msg = document.getElementById('formSuccess');
+    if (msg) msg.style.display = 'block';
+    setTimeout(() => { form.reset(); if (msg) msg.style.display = 'none'; }, 4000);
+  });
+}
+</script>
+</body>
+</html>
