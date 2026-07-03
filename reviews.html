@@ -138,7 +138,39 @@ footer{background:#04070D;color:rgba(255,255,255,0.8);padding:60px 0 0;border-to
 .reviews-stats,.videos-grid,.testimonials-grid,.footer-grid{grid-template-columns:1fr;}
 .cta-buttons{flex-direction:column;align-items:center;}
 .whatsapp-float{bottom:20px;right:20px;width:52px;height:52px;font-size:1.4rem;}
+.form-row{grid-template-columns:1fr!important;}
 }
+/* FEEDBACK SUBMIT */
+.feedback-form-box{background:var(--surface);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow);border:1px solid var(--border-soft);max-width:700px;margin:0 auto 56px;}
+.feedback-form-box h3{font-size:1.25rem;font-weight:700;color:var(--white);margin-bottom:6px;}
+.feedback-form-box .sub{font-size:0.88rem;color:var(--text-muted);margin-bottom:24px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+.form-group{margin-bottom:18px;}
+.form-group label{display:block;font-size:0.88rem;font-weight:600;color:var(--white);margin-bottom:8px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:13px 16px;border:1.5px solid var(--border-soft);border-radius:var(--radius-sm);font-family:'Poppins',sans-serif;font-size:0.92rem;color:var(--white);background:var(--surface-2);transition:border-color var(--transition),box-shadow var(--transition);outline:none;}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-muted);}
+.form-group select option{background:var(--surface-2);color:var(--white);}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(34,211,238,0.12);}
+.form-group textarea{resize:vertical;min-height:100px;}
+.star-picker{display:flex;gap:8px;margin-bottom:4px;}
+.star-picker span{font-size:1.8rem;cursor:pointer;transition:transform 0.15s ease;filter:grayscale(1);opacity:0.4;}
+.star-picker span.active{filter:none;opacity:1;transform:scale(1.15);}
+.feedback-success{display:none;background:rgba(34,211,238,0.1);border:1px solid var(--cyan);border-radius:var(--radius-sm);padding:12px 18px;color:var(--cyan-light);font-weight:600;font-size:0.88rem;margin-top:14px;text-align:center;box-shadow:0 0 14px rgba(34,211,238,0.15);}
+/* FEEDBACK DISPLAY GRID */
+.feedback-display-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.feedback-card{background:var(--surface);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border:1px solid var(--border-soft);transition:transform var(--transition),box-shadow var(--transition),border-color var(--transition);}
+.feedback-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);border-color:var(--border);}
+.feedback-card .f-stars{color:#FACC15;font-size:0.95rem;margin-bottom:10px;text-shadow:0 0 8px rgba(250,204,21,0.4);}
+.feedback-card .f-msg{font-size:0.88rem;color:var(--text-muted);line-height:1.75;margin-bottom:14px;font-style:italic;}
+.feedback-card .f-reviewer{display:flex;align-items:center;gap:10px;}
+.feedback-card .f-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;color:#04101F;font-weight:700;font-size:0.85rem;flex-shrink:0;box-shadow:0 0 10px rgba(45,212,255,0.3);}
+.feedback-card .f-name{font-weight:600;font-size:0.88rem;color:var(--white);}
+.feedback-card .f-course{font-size:0.75rem;color:var(--text-muted);}
+.feedback-card .f-date{font-size:0.72rem;color:var(--text-muted);margin-top:10px;text-align:right;opacity:0.6;}
+.no-feedback{text-align:center;padding:48px 20px;color:var(--text-muted);font-size:0.95rem;background:var(--surface);border-radius:var(--radius);border:1px dashed var(--border-soft);grid-column:1/-1;}
+.no-feedback .ni{font-size:2.5rem;margin-bottom:12px;display:block;opacity:0.5;}
+@media(max-width:900px){.feedback-display-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:580px){.feedback-display-grid{grid-template-columns:1fr;}.feedback-form-box{padding:24px 18px;}}
 </style>
 </head>
 <body>
@@ -222,16 +254,55 @@ footer{background:#04070D;color:rgba(255,255,255,0.8);padding:60px 0 0;border-to
 <section class="section">
 <div class="container">
 <div class="section-header fade-up">
-<span class="tag">Written Reviews</span>
-<h2 class="section-title">Student Feedback</h2>
+<span class="tag">Reviews</span>
+<h2 class="section-title">What Our Students Say</h2>
 </div>
-<div class="testimonials-grid">
+<div class="testimonials-grid" id="reviewsGrid">
 <div class="testimonial-card fade-up"><div class="stars">★★★★★</div><p>"The way concepts are explained here is so clear. Before joining, I had no idea how markets work. Now I can read charts and understand market structure."</p><div class="reviewer"><div class="reviewer-avatar">R</div><div><div class="reviewer-name">Rahul S.</div><div class="reviewer-course">Indian Stock Market Course</div></div></div></div>
 <div class="testimonial-card fade-up"><div class="stars">★★★★★</div><p>"Market Minds gave me a structured path. Smart Money Concepts finally made sense after this course. The faculty is very patient and supportive."</p><div class="reviewer"><div class="reviewer-avatar">P</div><div><div class="reviewer-name">Priya M.</div><div class="reviewer-course">Forex Trading Course</div></div></div></div>
 <div class="testimonial-card fade-up"><div class="stars">★★★★★</div><p>"The Professional Trader Program is very comprehensive. Both Indian and Forex markets are covered in a way that builds your understanding step by step."</p><div class="reviewer"><div class="reviewer-avatar">A</div><div><div class="reviewer-name">Amit K.</div><div class="reviewer-course">Professional Trader Program</div></div></div></div>
 <div class="testimonial-card fade-up"><div class="stars">★★★★★</div><p>"What I love most is the focus on risk management from day one. They don't just teach you to trade — they teach you to think and protect your capital."</p><div class="reviewer"><div class="reviewer-avatar">S</div><div><div class="reviewer-name">Sneha D.</div><div class="reviewer-course">Indian Stock Market Course</div></div></div></div>
 <div class="testimonial-card fade-up"><div class="stars">★★★★★</div><p>"As a working professional, the batch timings worked perfectly for me. The weekly revision class on Fridays is extremely helpful."</p><div class="reviewer"><div class="reviewer-avatar">V</div><div><div class="reviewer-name">Vikram T.</div><div class="reviewer-course">Forex Trading Course</div></div></div></div>
 <div class="testimonial-card fade-up"><div class="stars">★★★★★</div><p>"The 1 month live trading support after the course is a game changer. You get to see how the concepts apply in real markets with guidance."</p><div class="reviewer"><div class="reviewer-avatar">N</div><div><div class="reviewer-name">Neha R.</div><div class="reviewer-course">Professional Trader Program</div></div></div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="section-header fade-up">
+<span class="tag">Leave a Review</span>
+<h2 class="section-title">Share Your Experience</h2>
+<p class="section-subtitle">Studied with us? Your feedback helps future students make the right decision.</p>
+</div>
+
+<div class="feedback-form-box fade-up">
+<h3>✍️ Write a Review</h3>
+<p class="sub">Name and course are required. Star rating and message are optional but very helpful!</p>
+<div class="form-row">
+<div class="form-group" style="margin-bottom:0;"><label for="fb-name">Your Name *</label><input type="text" id="fb-name" placeholder="e.g. Rahul S." /></div>
+<div class="form-group" style="margin-bottom:0;"><label for="fb-course">Course *</label>
+<select id="fb-course">
+<option value="">Select course...</option>
+<option value="Indian Stock Market Trading">Indian Stock Market Trading</option>
+<option value="Forex Trading and Crypto">Forex Trading and Crypto</option>
+<option value="Professional Trader Program">Professional Trader Program</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label>Your Rating</label>
+<div class="star-picker" id="starPicker">
+<span data-val="1">⭐</span>
+<span data-val="2">⭐</span>
+<span data-val="3">⭐</span>
+<span data-val="4">⭐</span>
+<span data-val="5">⭐</span>
+</div>
+</div>
+<div class="form-group"><label for="fb-msg">Your Feedback</label><textarea id="fb-msg" placeholder="What did you learn? How did it help you? Share your honest experience..."></textarea></div>
+<button onclick="submitFeedback()" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:15px;">✅ Submit My Review</button>
+<div id="feedbackSuccess" class="feedback-success">🎉 Thank you! Your review has been added to the Reviews section above.</div>
 </div>
 </div>
 </section>
@@ -302,27 +373,105 @@ footer{background:#04070D;color:rgba(255,255,255,0.8);padding:60px 0 0;border-to
 <a href="https://wa.me/917400132119" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">💬</a>
 
 <script>
+// NAVBAR
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 if (hamburger && navLinks) {
-hamburger.addEventListener('click', () => {
-hamburger.classList.toggle('open');
-navLinks.classList.toggle('open');
-});
-navLinks.querySelectorAll('a').forEach(link => {
-link.addEventListener('click', () => {
-hamburger.classList.remove('open');
-navLinks.classList.remove('open');
-});
-});
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
 }
-const fadeEls = document.querySelectorAll('.fade-up');
-if (fadeEls.length) {
-const obs = new IntersectionObserver((entries) => {
-entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
-},{threshold:0.1});
-fadeEls.forEach(el => obs.observe(el));
+// FADE UP
+function observeFade(root) {
+  const els = (root || document).querySelectorAll('.fade-up:not(.visible)');
+  if (!els.length) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  els.forEach(el => obs.observe(el));
 }
+observeFade();
+
+// STAR PICKER
+let selectedRating = 5;
+const stars = document.querySelectorAll('#starPicker span');
+function updateStars(val) {
+  stars.forEach(s => s.classList.toggle('active', parseInt(s.dataset.val) <= val));
+}
+updateStars(5);
+stars.forEach(star => {
+  star.addEventListener('click', () => {
+    selectedRating = parseInt(star.dataset.val);
+    updateStars(selectedRating);
+  });
+  star.addEventListener('mouseenter', () => updateStars(parseInt(star.dataset.val)));
+});
+document.getElementById('starPicker')?.addEventListener('mouseleave', () => updateStars(selectedRating));
+
+// STORAGE
+const STORAGE_KEY = 'mmi_reviews_v1';
+function getReviews() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+  catch(e) { return []; }
+}
+function saveReviews(list) { localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); }
+function formatDate(iso) {
+  return new Date(iso).toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' });
+}
+
+function appendSavedReviews() {
+  const grid = document.getElementById('reviewsGrid');
+  if (!grid) return;
+  const list = getReviews();
+  // remove any previously appended dynamic cards to avoid duplicates
+  grid.querySelectorAll('.dynamic-review').forEach(el => el.remove());
+  list.forEach(r => {
+    const card = document.createElement('div');
+    card.className = 'testimonial-card dynamic-review fade-up';
+    card.innerHTML = `
+      <div class="stars">${'★'.repeat(r.rating || 5)}</div>
+      ${r.message ? `<p>"${r.message}"</p>` : ''}
+      <div class="reviewer">
+        <div class="reviewer-avatar">${r.name.charAt(0).toUpperCase()}</div>
+        <div>
+          <div class="reviewer-name">${r.name}</div>
+          <div class="reviewer-course">${r.course}</div>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+    // trigger visible immediately since card is already in view
+    requestAnimationFrame(() => card.classList.add('visible'));
+  });
+}
+
+function submitFeedback() {
+  const name = document.getElementById('fb-name')?.value.trim();
+  const course = document.getElementById('fb-course')?.value;
+  const message = document.getElementById('fb-msg')?.value.trim();
+  if (!name) { alert('Please enter your name.'); return; }
+  if (!course) { alert('Please select your course.'); return; }
+  const list = getReviews();
+  list.push({ name, course, message, rating: selectedRating, date: new Date().toISOString() });
+  saveReviews(list);
+  const succ = document.getElementById('feedbackSuccess');
+  if (succ) { succ.style.display = 'block'; setTimeout(() => succ.style.display = 'none', 4000); }
+  document.getElementById('fb-name').value = '';
+  document.getElementById('fb-course').value = '';
+  document.getElementById('fb-msg').value = '';
+  selectedRating = 5;
+  updateStars(5);
+  appendSavedReviews();
+}
+
+appendSavedReviews();
 </script>
 </body>
 </html>
