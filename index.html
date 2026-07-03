@@ -127,8 +127,8 @@ ul{list-style:none;}
 .course-card p{font-size:0.9rem;color:var(--text-muted);line-height:1.7;flex:1;margin-bottom:24px;}
 .course-card .btn{align-self:flex-start;}
 /* INSTRUCTOR CARDS */
-.instructors-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;max-width:800px;margin:0 auto;}
-.instructor-card{background:var(--surface);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);border:1px solid var(--border-soft);text-align:center;transition:transform var(--transition),box-shadow var(--transition),border-color var(--transition);}
+.instructors-grid{display:flex;justify-content:center;}
+.instructor-card{background:var(--surface);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);border:1px solid var(--border-soft);text-align:center;transition:transform var(--transition),box-shadow var(--transition),border-color var(--transition);width:100%;max-width:420px;}
 .instructor-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);border-color:var(--border);}
 .instructor-photo{width:110px;height:110px;border-radius:50%;margin:0 auto 20px;background:linear-gradient(135deg,#111B30,#0D1526);overflow:hidden;border:3px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:2.5rem;box-shadow:0 0 24px rgba(45,212,255,0.15);}
 .instructor-photo img{width:100%;height:100%;object-fit:cover;}
@@ -325,7 +325,13 @@ footer{background:#04070D;color:rgba(255,255,255,0.8);padding:60px 0 0;border-to
 <div class="instructor-role">Head Trainer — Indian Markets</div>
 <p>Expert in Indian equity and index markets with years of live trading experience. Specialises in price action, market structure, and risk management education.</p>
 </div>
-
+<div class="instructor-card fade-up">
+<div class="instructor-photo">👨‍🏫</div>
+<h3>Tanmay Anil Helkar</h3>
+<div class="instructor-role">Forex & SMC Specialist</div>
+<p>Specialist in Forex markets and Smart Money Concepts. Focuses on beginner-friendly delivery with real chart examples and live market walkthroughs.</p>
+</div>
+</div>
 </div>
 </section>
 
